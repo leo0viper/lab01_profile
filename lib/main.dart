@@ -29,7 +29,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final int _likes = 0;
+  int _likes = 0;
+
+  void _incrementLikes() {
+    setState(() {
+      _likes++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 12),
             FilledButton(
-              onPressed: () {
-                // ยังไม่ได้ใส่คำสั่งเพิ่มจำนวน Like
-              },
+              onPressed: _incrementLikes,
               child: const Text('Like'),
             ),
           ],
